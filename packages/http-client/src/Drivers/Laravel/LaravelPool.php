@@ -75,7 +75,7 @@ class LaravelPool implements CanHandleRequestPool
         // Extract factory using reflection (protected property)
         $reflection = new \ReflectionClass($pendingRequest);
         $factoryProperty = $reflection->getProperty('factory');
-        $factoryProperty->setAccessible(true);
+        
         $this->factory = $factoryProperty->getValue($pendingRequest);
         
         // Store base configured PendingRequest for cloning
